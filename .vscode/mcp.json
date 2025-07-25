@@ -1,9 +1,15 @@
 {
-	"servers": {
-		"ultracite": {
-			"type": "stdio",
-			"command": "npx",
-			"args": ["-y", "mcp-remote", "https://www.ultracite.ai/api/mcp/mcp"]
-		}
-	}
+  "servers": {
+    "ultracite": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://www.ultracite.ai/api/mcp/mcp"]
+    },
+    "my-mcp-server": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["dist/index.js"]
+    }
+  },
+  "inputs": []
 }

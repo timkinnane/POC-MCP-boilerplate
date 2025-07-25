@@ -1,3 +1,5 @@
+# MCP Dev Boilerplate Monorepo
+
 ## Dev Tools
 
 First install [Gemini CLI](https://github.com/google-gemini/gemini-cli) and/or [Claude Desktop](https://claude.ai/download).
@@ -60,3 +62,10 @@ https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md
 **Reference servers**
 
 https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-reference-servers
+
+## TODO
+
+- [ ] Break down components for team to work in parallel
+- [ ] Github authentication and search Pando codebase and examples
+- [ ] Web search for Pando docs (with cache?)
+- Slack authentication and search searching relevant answers on ask-pando- 
