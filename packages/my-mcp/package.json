@@ -12,21 +12,26 @@
     "my-mcp": "./dist/index.js"
   },
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js"
+    "dev": "tsx src/index.ts --watch",
+    "build": "pkgroll src/index.ts",
+    "inspect": "@modelcontextprotocol/inspector node ./dist/index.js"
   },
   "devDependencies": {
     "@biomejs/biome": "2.1.2",
+    "@google/gemini-cli": "^0.1.14",
+    "@modelcontextprotocol/inspector": "^0.16.2",
     "@tsconfig/node24": "^24.0.1",
     "@tsconfig/strictest": "^2.0.5",
     "@types/express": "^5.0.3",
     "@types/node": "^24.1.0",
+    "pkgroll": "^2.14.5",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "ultracite": "5.0.48"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.0",
     "express": "^5.1.0",
-    "zod": "3.25.76"
+    "zod": "^4.0.10"
   }
 }

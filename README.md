@@ -1,27 +1,12 @@
 # MCP Dev Boilerplate Monorepo
 
-## Dev Tools
-
-First install [Gemini CLI](https://github.com/google-gemini/gemini-cli) and/or [Claude Desktop](https://claude.ai/download).
-
-```
-brew install gemini-cli
-brew install claude
-```
-
-These can both be configured with a local MCP server.
-
-> [!NOTE]
->  
-> **Claude** desktop seems like the easiest way to test local MCP integrations but can only run OpenAI models.
-> If you don't have an OpenAI account or licence, it's still worth running free tier just to debug.
-
 ## Workspace Setup
 
 1. Install Node version in [`.tool-versions`](./.tool-versions), recommended with
    [mise](https://mise.jdx.dev/)
-2. Install/enable PNPM with `corepack @@ corepack prepare --activate`
+2. Install/enable PNPM with `corepack && corepack prepare --activate`
 3. Install dependencies and link workspace packages `pnpm install`
+4. Build the example MCP server `pnpm run -F my-mcp-boilerplate build`
 
 > [!NOTE]
 > Workspace linting uses [Ultracite](https://ultracite.ai), a Biome preset with MCP integration.
@@ -29,21 +14,37 @@ These can both be configured with a local MCP server.
 > This was an experiment in using MCP for keeping generated code within standards, while building
 > MCP servers to generate code. How meta!
 
-## MCP Server Setup
+## Dev Tools
 
-## Gemini Setup
+There are two scripts at the root providing dev tooling for manually testing and debugging:
 
-1. Get a Gemini API key: https://aistudio.google.com/apikey
-2. Export or add that to your `.env` as `GEMINI_API_KEY`
-3. 
+### [Gemini CLI](https://github.com/google-gemini/gemini-cli)
+
+Run `pnpm cli` to start.
+
+The [server config](./.gemini/settings.json) for Gemini is included in the boilerplate.
+
+Try with commands like `/mcp list` to show the example server description.
+
+> [!NOTE]
+>
+> This may require an API key added to .env - https://aistudio.google.com/apikey
+
+### [MCP Inspector](https://github.com/modelcontextprotocol/inspector)
+
+Run `pnpm inspect` to start.
+
+This UI shows the resources, tools and templates exposed by your MCP server and gives some basic
+controls to trigger them and see outputs.
+
+There are different ways to invoke this tool for different purposes. See the docs for details:
+
+https://github.com/modelcontextprotocol/inspector?tab=readme-ov-file#ui-mode-vs-cli-mode-when-to-use-each
 
 ## VS Code Setup
 
 The local example server and one remote example server are configured in
 [`.vscode/mcp.json`](./.vscode/mcp.json)
-
-You can also add the setting for `chat.mcp.discovery.enabled` to allow VS Code to discover MCP
-servers defined in tools like Claude Desktop.
 
 ## Resources
 
@@ -62,10 +63,3 @@ https://github.com/google-gemini/gemini-cli/blob/main/docs/tools/mcp-server.md
 **Reference servers**
 
 https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-reference-servers
-
-## TODO
-
-- [ ] Break down components for team to work in parallel
-- [ ] Github authentication and search Pando codebase and examples
-- [ ] Web search for Pando docs (with cache?)
-- Slack authentication and search searching relevant answers on ask-pando- 

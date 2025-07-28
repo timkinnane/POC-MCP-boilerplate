@@ -8,7 +8,8 @@
     "my-mcp-server": {
       "type": "stdio",
       "command": "node",
-      "args": ["dist/index.js"]
+      "args": ["dist/index.js"],
+      "cwd": "./packages/my-mcp"
     }
   },
   "inputs": []

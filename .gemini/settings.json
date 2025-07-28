@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "myMcpServer": {
+      "command": "node",
+      "args": ["dist/index.js"],
+      "cwd": "./packages/my-mcp",
+      "trust": true
+    }
+  }
+}
